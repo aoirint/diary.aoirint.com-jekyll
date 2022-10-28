@@ -29,6 +29,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Create contents dir
+        shell: bash
+        run: mkdir -p ./contents
+
       - name: Checkout contents
         uses: actions/checkout@v3
         with:
