@@ -2,6 +2,7 @@ name: Diary
 url: https://diary.aoirint.com
 author: aoirint
 permalink: /:year/:month/:day/:title/
+timezone: Asia/Tokyo
 plugins:
   - jekyll-feed
   - jekyll-sitemap
