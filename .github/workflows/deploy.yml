@@ -39,9 +39,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
-      - name: Copy _config.yml
+      - name: Copy _config.yml, _includes
         shell: bash
-        run: cp ./_config.yml ./contents/
+        run: cp -r ./_config.yml ./_includes ./contents/
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
