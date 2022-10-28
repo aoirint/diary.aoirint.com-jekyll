@@ -1,6 +1,5 @@
 # https://github.com/actions/starter-workflows/blob/5e60d02759829e0e27db87bd924ea5b45dd8503d/pages/jekyll-gh-pages.yml
-# https://github.com/actions/starter-workflows/blob/5e60d02759829e0e27db87bd924ea5b45dd8503d/pages/jekyll.yml
-name: Deploy Jekyll site to Pages
+name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
   # Runs on pushes targeting the default branch
@@ -37,24 +36,14 @@ jobs:
           path: ./contents
           token: ${{ secrets.GH_PAT }}
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
-        with:
-          ruby-version: '3.0' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
-      - name: Copy Jekyll configuration
-        shell: bash
-        run: cp ./_config.yml ./contents/
-
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --source "./contents" --destination "./_site"
-        env:
-          JEKYLL_ENV: production
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./contents
+          destination: ./_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
