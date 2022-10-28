@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: aoirint/diary.aoirint.com-contents
-          path: ./contents
+          path: ./contents/_posts
           token: ${{ secrets.GH_PAT }}
 
       - name: Setup Pages
