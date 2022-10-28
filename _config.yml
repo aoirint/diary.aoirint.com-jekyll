@@ -1,7 +1,7 @@
 name: Diary
 url: https://diary.aoirint.com
 author: aoirint
-permalink: /:year/:month/:day/:title/index.html
+permalink: /:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-sitemap
