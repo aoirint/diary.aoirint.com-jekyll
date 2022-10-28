@@ -1,3 +1,7 @@
+name: Diary
+url: https://diary.aoirint.com
+author:
+  twitter: aoirint
 plugins:
   - jekyll-feed
   - jekyll-sitemap
