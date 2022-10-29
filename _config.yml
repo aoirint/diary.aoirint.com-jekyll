@@ -3,9 +3,10 @@ url: https://diary.aoirint.com
 author: aoirint
 permalink: /:year/:month/:day/:title/
 timezone: Asia/Tokyo
-theme: primer
+remote_theme: pages-themes/primer@v0.6.0
 lang: ja
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-archives
+  - jekyll-remote-theme
